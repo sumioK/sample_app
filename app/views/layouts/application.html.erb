@@ -2,11 +2,7 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-
+    <%= render 'layouts/head'%>
     <%= render 'layouts/shim'%>
   </head>
   <body>
@@ -14,20 +10,10 @@
 
     <div class="container">
       <%= yield %>
+      <%= render 'layouts/footer'%>
     </div>
-    <div class="center jumbotron">
-  <h1>Welcome to the Sample App</h1>
+    
 
-  <h2>
-    This is the home page for the
-    <a href="https://railstutorial.jp/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
 
-  <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
-</div>
-
-<%= link_to image_tag("rails.png", alt: "Rails logo"),'http://rubyonrails.org/' %>
-<%= render 'layouts/footer'%>
   </body>
 </html>
